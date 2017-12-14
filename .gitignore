@@ -1,0 +1,30 @@
+# dependencies
+node_modules
+
+# testing
+coverage
+
+# sonar
+?
+.scannerwork
+
+# production
+build
+
+# misc
+package-lock.json
+.DS_Store
+.env
+npm-debug.log
+_ignore
+.vscode-upload.json
+docker-compose-tmp*
+docker-compose.json
+vault.*
+
+# webstorm
+.idea/
+
+# eclipse
+.project
+.settings/
