@@ -46,7 +46,16 @@
   "scripts": {
     "test": "tape test/*.js",
     "cover": "istanbul cover tape -- test/*.js",
-    "lint": "jshint -c .jshintrc lib/**/*.js"
+    "lint": "jshint -c .jshintrc lib/**/*.js",
+    "security-check": "nsp check",
+    "start": "node ./node_modules/babel-cli/bin/babel-node.js ./server.js",
+    "start-win": ".\\node_modules\\babel-cli\\bin\\babel-node.js --presets node6 server.js",
+    "deploy": "node_modules/babel-cli/bin/babel.js src/ -d build/",
+    "start:dev": "npm-run-all --parallel lint:watch start:watch",
+    "start:watch": "nodemon ./server.js --exec ./node_modules/babel-cli/bin/babel-node.js",
+    "lint:watch": "npm run lint -- --watch",
+    "_comment:CICD": "Different Test Scripts",
+    "build": "echo \".....Nothing to Build Here\""
   },
   "main": "./server"
 }

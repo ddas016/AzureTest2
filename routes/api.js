@@ -1,7 +1,8 @@
-var express = require('express');
-var app = express.Router();
+import express from 'express';
 
-app.get('/ping', function (req, res) {
+const app = express.Router();
+
+app.get('/ping', (req, res) => {
     res.send({ "status": "I DID IT"});
   });
 module.exports =  app ;
